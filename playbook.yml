@@ -1,0 +1,20 @@
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - enable_maintenance_mode
+    - sshkeyconfig
+    - create_db_backup
+    - copy_moodledata_site_dir
+    - copy_storage_to_target_location
+
+- hosts: webservers
+  roles:
+    - restore_db_backup
+    - restore_site_backup
+    - update_config_file
+    - disable_maintenance_mode
+
+    # if DB restore fails in between then control should transfer
+    # to the new role which will delete created DB.
+
+    # if restore_site_backup fails then remove the copied content

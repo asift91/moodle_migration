@@ -1,0 +1,35 @@
+---
+- name: Create a new moodledata directory
+  file:
+    state: directory
+    path: "{{moodledata_new_dir_path}}"
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
+    mode: 0755
+  become: yes
+
+- name: "change permissions of moodledata directory"
+  command: "chmod 777 {{moodledata_dir}}"
+  become: yes
+
+-
+  name: "copy moodledata to new directory"
+  command: "mv {{moodledata_dir}} {{moodledata_new_dir_path}}"
+  become: yes
+
+- name: "revert permissions of moodledata directory"
+  command: "chmod 770 {{moodledata_dir}}"
+  become: yes
+  
+- name: Create a new site directory
+  file:
+    state: directory
+    path: "{{site_new_dir_path}}"
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
+    mode: 0755
+  become: yes
+-
+  name: "copy site new directory"
+  command: "mv {{site_dir_path}} {{site_new_dir_path}}"
+  become: yes

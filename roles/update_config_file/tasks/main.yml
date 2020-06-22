@@ -1,0 +1,7 @@
+---
+- name: "Update config php file"
+  command: "sudo sed -i "s~$CFG->wwwroot   = '{{old_domain_name}}';~$CFG->wwwroot   = '{{new_domain_name}}';~" /azlamp/html/{{new_domain_name}}/config.php"
+
+- name: "Update config php file"
+  command: "sudo sed -i "s~$CFG->wwwroot   = '{{moodledata_dir_path}}';~$CFG->wwwroot   = '{{new_moodledata_dir_path}}';~" /azlamp/html/{{new_domain_name}}/config.php"
+

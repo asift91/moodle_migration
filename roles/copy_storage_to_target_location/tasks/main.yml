@@ -1,0 +1,6 @@
+---
+- name: Create a new moodledata directory
+- 
+  command: scp  {{ export_dir_path | quote }} {{ user_name | quote }}@{{ tar_vm_ip | quote }}:/home/{{user_name}}
+  name: "copy database and site files to remote host" 
+  no_log: false

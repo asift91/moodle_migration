@@ -1,0 +1,5 @@
+---
+-
+  name: "restore site directory"
+  command: "cp -rf {{moodledata_new_dir_path}} /azlamp/html/"
+

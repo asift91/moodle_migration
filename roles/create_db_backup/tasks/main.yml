@@ -1,0 +1,13 @@
+---
+- name: Create database directory
+  file:
+    state: directory
+    path: "{{db_dir_path}}"
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
+    mode: 0755
+  become: yes
+-
+  name: "create a backup database"
+  command: mysqldump -h {{db_server_name}} -u {{db_user_name}} -p'{{db_pass}}' -C -Q -e --create-options {{db_name}} > {{db_dir_path}}/moodle-database.sql
+  

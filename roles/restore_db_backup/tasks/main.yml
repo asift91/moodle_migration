@@ -1,0 +1,5 @@
+---
+-
+  name: "restore database"
+  command: "mysql -h {{db_server_name_tar}} -u {{db_user_name_tar}} -p'{{db_pass_tar}}' {{db_name_tar}} < {{db_dir_path}}/moodle-database.sql"
+

@@ -1,30 +1,28 @@
-vm_ip: IP
-vm_password: password
-user_name: azusername
-hostname: moodle
-domain_name: domain
-lbdns: dns
-
-webroot: /var/www/html
-moodle_download_url: https://download.moodle.org/stable36/moodle
-
-moodle_data_direc_path: /azlamp/moodledata
-moodle_download_path: /tmp/moodle
-version: 3.6.3
+user_name: azureadmin
 default_permission: www-data
-#database details will be updated in run time
 
-dbservername: localhost
-dbusername: dbname
-dbpassword: dbpass
-moodle_db_name: moodle
-moodle_login_id: admin
-moodle_pass: 
-moodle_admin_mail: test@gmail.com
-moodle_full_name: Moodle LMS
-moodle_short_name: Moodle
-moodle_db_user: moodle
-moodle_db_pass: 
+# Target details
+db_server_name_tar: mysql-43enuc.mysql.database.azure.com
+db_user_name_tar: dbadmin@mysql-43enuc
+db_pass_tar: iTalent@27
+db_name_tar: moodletar
+tar_vm_ip: 52.255.140.119
+new_domain_name: lb-43enuc.eastus.cloudapp.azure.com
 
-replication_url: https://raw.githubusercontent.com/Azure/LAMP/master/scripts/moodle_replication.sh
-repli_script_name: moodle_replication.sh
+# Source details
+db_server_name: mysql-6qudgw.mysql.database.azure.com
+db_user_name: dbadmin@mysql-6qudgw
+db_pass: iTalent@27
+db_name: lampmoodle
+old_domain_name: lb-6qudgw.eastus.cloudapp.azure.com
+
+# Directory paths
+db_dir_path: /home/azureadmin
+moodledata_dir: /azlamp/moodledata
+moodledata_tar_dir: /azlamp/moodledata
+site_dir_path: /azlamp/html/*
+storage_dir_path: /home/azureadmin/storage
+
+# storage_new_dir_path: /home/azureadmin/storage
+# moodledata_new_dir_path: /home/azureadmin/storage
+# site_new_dir_path: /home/azureadmin/storage

@@ -1,8 +1,8 @@
 ---
-- name: Create a new moodledata directory
+- name: Create a new stotage directory
   file:
     state: directory
-    path: "{{moodledata_new_dir_path}}"
+    path: "{{storage_dir_path}}"
     owner: "{{default_permission}}"
     group: "{{default_permission}}"
     mode: 0755
@@ -14,22 +14,20 @@
 
 -
   name: "copy moodledata to new directory"
-  command: "mv {{moodledata_dir}} {{moodledata_new_dir_path}}"
+  command: "cp -rf {{moodledata_dir}} {{storage_dir_path}}"
   become: yes
 
 - name: "revert permissions of moodledata directory"
   command: "chmod 770 {{moodledata_dir}}"
   become: yes
-  
-- name: Create a new site directory
-  file:
-    state: directory
-    path: "{{site_new_dir_path}}"
-    owner: "{{default_permission}}"
-    group: "{{default_permission}}"
-    mode: 0755
-  become: yes
+
 -
   name: "copy site new directory"
-  command: "mv {{site_dir_path}} {{site_new_dir_path}}"
+  command: "cp -rf {{site_dir_path}} {{storage_dir_path}}"
   become: yes
+
+-
+  name: "copy database backup file to storage"
+  command: "cp {{db_dir_path}}/moodle-database.sql {{storage_dir_path}}"
+  become: yes
+

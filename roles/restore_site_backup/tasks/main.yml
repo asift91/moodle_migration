@@ -1,5 +1,6 @@
 ---
 -
   name: "restore site directory"
-  command: "cp -rf {{moodledata_new_dir_path}} /azlamp/html/"
+  command: "cp -rf {{storage_dir_path}}/{{old_domain_name}}/* /azlamp/html/{{new_domain_name}}/"
+  # sudo cp -rf /home/azureadmin/storage/lb-6qudgw.eastus.cloudapp.azure.com/* /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/
 

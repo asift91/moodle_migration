@@ -1,5 +1,8 @@
 ---
+- name: "unzip the storage"
+  command: "unzip {{db_dir_path}}/storage.zip"
 -
   name: "restore database"
-  command: "mysql -h {{db_server_name_tar}} -u {{db_user_name_tar}} -p'{{db_pass_tar}}' {{db_name_tar}} < {{db_dir_path}}/moodle-database.sql"
+  command: "mysql -h {{db_server_name_tar}} -u {{db_user_name_tar}} -p'{{db_pass_tar}}' {{db_name_tar}} < {{storage_dir_path}}/moodle-database.sql"
 
+# sudo mysql -h mysql-43enuc.mysql.database.azure.com -u dbadmin@mysql-43enuc -p'iTalent@27' moodle_tar < /home/azureadmin/storage/moodle-database.sql

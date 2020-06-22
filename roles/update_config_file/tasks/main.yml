@@ -6,3 +6,7 @@
 - name: "Update config php file"
   command: "sudo sed -i "s~dataroot  = '{{moodledata_dir_path}}';~dataroot  = '{{moodledata_tar_dir}}';~" /azlamp/html/{{new_domain_name}}/config.php"
   become: yes
+
+
+  # sudo sed -i "s~wwwroot   = 'https://lb-6qudgw.eastus.cloudapp.azure.com';~wwwroot   = 'https://lb-43enuc.eastus.cloudapp.azure.com';~" /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/config.php
+  # sudo sed -i "s~dataroot  = '/azlamp/moodledata';~dataroot  = '/azlamp/moodledata';~" /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/config.php

@@ -6,16 +6,16 @@ target_dns_name: lb-43enuc.eastus.cloudapp.azure.com
 target_db_server_name: mysql-43enuc.mysql.database.azure.com
 target_db_login_name: dbadmin@mysql-43enuc
 target_db_pass: iTalent@27
-target_db_name: moodletar
+target_db_name: moodle
 tar_vm_ip: 52.255.140.119
 tar_vm_password: iTalent@27
 
 # Source details
-source_db_server_name: mysql-6qudgw.mysql.database.azure.com
-source_db_login_name: dbadmin@mysql-6qudgw
+source_db_server_name: mysql-24qd5n.mysql.database.azure.com
+source_db_login_name: dbadmin@mysql-24qd5n
 source_db_pass: iTalent@27
-source_db_name: lampmoodle
-source_dns_name: lb-6qudgw.eastus.cloudapp.azure.com
+source_db_name: moodle
+source_dns_name: lb-24qd5n.eastus.cloudapp.azure.com
 
 # Directory paths
 db_dir_path: /home/azureadmin

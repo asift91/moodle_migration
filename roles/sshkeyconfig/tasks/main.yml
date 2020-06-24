@@ -20,5 +20,5 @@
   become: yes
 -
   name: "copy file to remote host"
-  command: "sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/azureadmin/.ssh/id_rsa.pub -o StrictHostKeyChecking=no azureadmin@{{ tar_vm_ip | quote }}"
+  command: sshpass -p iTalent@27 ssh-copy-id -i /home/azureadmin/.ssh/id_rsa.pub -o StrictHostKeyChecking=no azureadmin@52.255.140.119
 

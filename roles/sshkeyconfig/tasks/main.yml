@@ -13,12 +13,12 @@
 - 
   name: "generate sshkey"
   openssh_keypair:
-    path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
-    group: "{{ user_name | quote }}"
-    owner: "{{ user_name | quote }}"
+    path: /home/azureadmin/.ssh/id_rsa
+    group: azureadmin
+    owner: azureadmin
     size: 4096
   become: yes
 - 
   name: "copy file to remote host"
-  command: "sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/{{ user_name | quote }}/.ssh/id_rsa.pub -o StrictHostKeyChecking=no {{ user_name | quote }}@{{ tar_vm_ip | quote }}"
+  command: "sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/azureadmin/.ssh/id_rsa.pub -o StrictHostKeyChecking=no azureadmin@{{ tar_vm_ip | quote }}"
   

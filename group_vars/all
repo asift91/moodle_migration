@@ -28,6 +28,6 @@ sql_dump_script_name: sql_dump.sh
 replication_name: replication.sh
 update_config_script_name: update_config.sh
 
-sql_dump_url: https://raw.githubusercontent.com/sayali0512/ansible-script/master/sql_dump.sh
+sql_dump_url: https://raw.githubusercontent.com/asift91/moodle_migration/master/sql_dump.sh
 replication_url: https://raw.githubusercontent.com/sayali0512/ansible-script/master/replication.sh
 target_info: https://raw.githubusercontent.com/asift91/moodle_migration/master/update_config.sh

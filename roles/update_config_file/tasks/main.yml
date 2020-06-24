@@ -10,7 +10,7 @@
   
 -
   name: "Run a replica script with arguments (using 'cmd' parameter)"
-  shell: /home/{{ user_name | quote }}/{{target_info_script_name}} {{ target_db_server_name | quote }} {{ target_db_login_name | quote }} {{ target_db_pass | quote }} {{ target_db_name | quote }} {{ target_dns_name | quote }}
+  shell: /home/{{ user_name | quote }}/{{update_config_script_name}} {{ target_db_server_name | quote }} {{ target_db_login_name | quote }} {{ target_db_pass | quote }} {{ target_db_name | quote }} {{ target_dns_name | quote }} {{ moodledata_dir | quote }}
   args:
     executable: /bin/bash
 

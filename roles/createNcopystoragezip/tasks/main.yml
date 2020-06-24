@@ -1,0 +1,11 @@
+---
+- name: Create a zip archive of storage
+  archive:
+    path: "{{storage_dir_path}}"
+    format: zip
+    dest: /home/azureadmin/storage.zip
+
+-
+  name: "copy storage.zip file to remote host"
+  command: scp /home/{{user_name}}/storage.zip {{user_name}}@{{tar_vm_ip}}:/home/{{user_name}}
+  #no_log: false

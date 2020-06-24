@@ -1,20 +1,21 @@
 user_name: azureadmin
 default_permission: www-data
-
+ 
 # Target details
-db_server_name_tar: mysql-43enuc.mysql.database.azure.com
-db_user_name_tar: dbadmin@mysql-43enuc
-db_pass_tar: iTalent@27
-db_name_tar: moodletar
+target_dns_name: lb-43enuc.eastus.cloudapp.azure.com
+target_db_server_name: mysql-43enuc.mysql.database.azure.com
+target_db_login_name: dbadmin@mysql-43enuc
+target_db_pass: iTalent@27
+target_db_name: moodletar
 tar_vm_ip: 52.255.140.119
-new_domain_name: lb-43enuc.eastus.cloudapp.azure.com
+tar_vm_password: iTalent@27
 
 # Source details
-db_server_name: mysql-6qudgw.mysql.database.azure.com
-db_user_name: dbadmin@mysql-6qudgw
-db_pass: iTalent@27
-db_name: lampmoodle
-old_domain_name: lb-6qudgw.eastus.cloudapp.azure.com
+source_db_server_name: mysql-6qudgw.mysql.database.azure.com
+source_db_login_name: dbadmin@mysql-6qudgw
+source_db_pass: iTalent@27
+source_db_name: lampmoodle
+source_dns_name: lb-6qudgw.eastus.cloudapp.azure.com
 
 # Directory paths
 db_dir_path: /home/azureadmin
@@ -23,6 +24,10 @@ moodledata_tar_dir: /azlamp/moodledata
 site_dir_path: /azlamp/html/*
 storage_dir_path: /home/azureadmin/storage
 
-# storage_new_dir_path: /home/azureadmin/storage
-# moodledata_new_dir_path: /home/azureadmin/storage
-# site_new_dir_path: /home/azureadmin/storage
+sql_dump_script_name: sql_dump.sh
+replication_name: replication.sh
+update_config_script_name: update_config.sh
+
+sql_dump_url: https://raw.githubusercontent.com/sayali0512/ansible-script/master/sql_dump.sh
+replication_url: https://raw.githubusercontent.com/sayali0512/ansible-script/master/replication.sh
+target_info: https://raw.githubusercontent.com/asift91/moodle_migration/master/update_config.sh

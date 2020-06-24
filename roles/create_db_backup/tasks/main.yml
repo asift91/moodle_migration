@@ -1,13 +1,10 @@
 ---
-- name: Create database directory
-  file:
-    state: directory
-    path: "{{db_dir_path}}"
-    owner: "{{default_permission}}"
-    group: "{{default_permission}}"
-    mode: 0755
+- name: Install MySQL 
+  apt: 
+    name: mysql-server
+    state: latest
   become: yes
 -
   name: "create a backup database"
-  command: mysqldump -h {{db_server_name}} -u {{db_user_name}} -p'{{db_pass}}' -C -Q -e --create-options {{db_name}} > {{db_dir_path}}/moodle-database.sql
+  command: "mysqldump -h {{source_db_server_name}} -u {{source_db_login_name}} -p{{source_db_pass}} {{source_db_name}} > {{storage_dir_path}}/database.sql"
   

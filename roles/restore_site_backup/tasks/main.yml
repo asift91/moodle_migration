@@ -1,6 +1,24 @@
 ---
--
-  name: "restore site directory"
-  command: "cp -rf {{storage_dir_path}}/{{old_domain_name}}/* /azlamp/html/{{new_domain_name}}/"
-  # sudo cp -rf /home/azureadmin/storage/lb-6qudgw.eastus.cloudapp.azure.com/* /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/
+- name: Extract storage.zip
+  unarchive:
+    src: "{{db_dir_path}}/storage.zip"
+    dest: "{{db_dir_path}}"
+    owner: "{{default_permission}}"
+    group: "{{default_permission}}"
+    copy: no
+  become: yes
 
+-
+  name: "move site contents"
+  command: "mv {{storage_dir_path}}/{{target_dns_name}} /azlamp/html/"
+  become: yes
+
+-
+  name: "move moodledata contents"
+  command: "mv {{storage_dir_path}}/moodledata/ /azlamp/"
+  become: yes
+
+-
+  name: "set permissions to moodledata"
+  command: "chmod 770 {{moodledata_dir}}"
+  become: yes

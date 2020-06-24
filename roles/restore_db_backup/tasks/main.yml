@@ -1,8 +1,27 @@
----
-- name: "unzip the storage"
-  command: "unzip {{db_dir_path}}/storage.zip"
--
-  name: "restore database"
-  command: "mysql -h {{db_server_name_tar}} -u {{db_user_name_tar}} -p'{{db_pass_tar}}' {{db_name_tar}} < {{storage_dir_path}}/moodle-database.sql"
+--- 
+- name: Install MySQL 
+  apt: 
+    name: mysql-server
+    state: latest
+  become: yes
+- 
+  get_url: 
+    dest: "/home/{{ user_name | quote }}"
+    group: "{{ user_name | quote }}"
+    mode: 493
+    owner: "{{ user_name | quote }}"
+    url: "{{sql_dump_url}}"
+  name: "Download sql_dump.sh script using get_url"
+- 
+  args: 
+    executable: /bin/bash
+  name: "Run a sql_dump.sh script with arguments (using 'cmd' parameter)"
+  shell: "/home/{{ user_name | quote }}/{{ sql_dump_script_name | quote }} {{ target_db_name | quote }}"
+
+# - name: "unzip the storage"
+#   command: "unzip {{db_dir_path}}/storage.zip"
+# -
+#   name: "restore database"
+#   command: "mysql -h {{db_server_name_tar}} -u {{db_user_name_tar}} -p'{{db_pass_tar}}' {{db_name_tar}} < {{storage_dir_path}}/moodle-database.sql"
 
 # sudo mysql -h mysql-43enuc.mysql.database.azure.com -u dbadmin@mysql-43enuc -p'iTalent@27' moodle_tar < /home/azureadmin/storage/moodle-database.sql

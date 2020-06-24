@@ -2,16 +2,17 @@
   connection: local
   roles:
     #- enable_maintenance_mode
-    - sshkeyconfig
-    - create_db_backup
-    - copy_moodledata_site_dir
-    - copy_storage_to_target_location
+    - sshkeyconfig # done
+    - create_db_backup # done
+    - copy_moodle_siteNdata #copy_moodledata_site_dir  # done
+    - update_config_file
+    - createNcopystoragezip #- copy_storage_to_target_location  # done
 
 - hosts: webservers
   roles:
-    - restore_db_backup
-    - restore_site_backup
-    - update_config_file
+    - restore_db_backup  # done
+    - restore_site_backup # done
+    - replication  # done
    # - disable_maintenance_mode
 
     # if DB restore fails in between then control should transfer

@@ -1,8 +1,9 @@
 ---
-- name: Create a new stotage directory
+-
+  name: Create a stotage directory
   file:
     state: directory
-    path: "{{storage_dir_path}}"
+    path: "{{storage_dir_path}}/"
     owner: "{{default_permission}}"
     group: "{{default_permission}}"
     mode: 0755
@@ -13,7 +14,7 @@
   become: yes
 
 -
-  name: "copy moodledata to new directory"
+  name: "copy moodledata to storage directory"
   command: "cp -rf {{moodledata_dir}} {{storage_dir_path}}"
   become: yes
 
@@ -22,12 +23,11 @@
   become: yes
 
 -
-  name: "copy site new directory"
-  command: "cp -rf {{site_dir_path}} {{storage_dir_path}}"
+  name: "copy site content to storage"
+  command: "cp -rf /azlamp/html/{{source_dns_name}}/ {{storage_dir_path}}"
   become: yes
 
 -
-  name: "copy database backup file to storage"
-  command: "cp {{db_dir_path}}/moodle-database.sql {{storage_dir_path}}"
+  name: "rename site content folder name from source to target"
+  command: "mv {{storage_dir_path}}/{{source_dns_name}}/ {{storage_dir_path}}/{{target_dns_name}}"
   become: yes
-

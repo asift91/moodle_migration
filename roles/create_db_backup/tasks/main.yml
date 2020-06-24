@@ -7,4 +7,3 @@
 -
   name: "create a backup database"
   command: "mysqldump -h {{source_db_server_name}} -u {{source_db_login_name}} -p{{source_db_pass}} {{source_db_name}} > {{storage_dir_path}}/database.sql"
-  

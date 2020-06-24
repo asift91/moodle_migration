@@ -23,29 +23,3 @@
      command: sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/{{ user_name | quote }}/.ssh/id_rsa.pub -o StrictHostKeyChecking=no {{user_name | quote }}@{{ tar_vm_ip | quote }}
 
 
-
-
-# ---
-# -
-#   name: "upgrade"
-#   apt:
-#     upgrade: true
-#   become: true
-# -
-#   name: "install sshpass"
-#   apt:
-#     name: sshpass
-#     state: latest
-#   become: true
-# -
-#   name: "generate sshkey"
-#   openssh_keypair:
-#     path: /home/azureadmin/.ssh/id_rsa
-#     group: azureadmin
-#     owner: azureadmin
-#     size: 4096
-#   become: yes
-# -
-#   name: "copy file to remote host"
-#   command: sshpass -p iTalent@27 ssh-copy-id -i /home/azureadmin/.ssh/id_rsa.pub -o StrictHostKeyChecking=no azureadmin@52.255.140.119
-

@@ -10,20 +10,6 @@
   
 -
   name: "Run a replica script with arguments (using 'cmd' parameter)"
-  shell: /home/{{ user_name | quote }}/{{update_config_script_name}} {{ target_db_server_name | quote }} {{ target_db_login_name | quote }} {{ target_db_pass | quote }} {{ target_db_name | quote }} {{ target_dns_name | quote }} {{ moodledata_dir | quote }}
+  shell: "/home/{{ user_name | quote }}/{{update_config_script_name}} {{ target_db_server_name | quote }} {{ target_db_login_name | quote }} {{ target_db_pass | quote }} {{ target_db_name | quote }} {{ target_dns_name | quote }} {{ moodledata_dir | quote }}"
   args:
     executable: /bin/bash
-
-
-# ---
-# - name: "Update config php file"
-#   command: "sudo sed -i "s~wwwroot   = 'https://{{old_domain_name}}';~wwwroot   = 'https://{{new_domain_name}}';~" /azlamp/html/{{new_domain_name}}/config.php"
-#   become: yes
-
-# - name: "Update config php file"
-#   command: "sudo sed -i "s~dataroot  = '{{moodledata_dir_path}}';~dataroot  = '{{moodledata_tar_dir}}';~" /azlamp/html/{{new_domain_name}}/config.php"
-#   become: yes
-
-
-  # sudo sed -i "s~wwwroot   = 'https://lb-6qudgw.eastus.cloudapp.azure.com';~wwwroot   = 'https://lb-43enuc.eastus.cloudapp.azure.com';~" /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/config.php
-  # sudo sed -i "s~dataroot  = '/azlamp/moodledata';~dataroot  = '/azlamp/moodledata';~" /azlamp/html/lb-43enuc.eastus.cloudapp.azure.com/config.php

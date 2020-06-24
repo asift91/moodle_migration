@@ -18,7 +18,8 @@
   command: "cp -rf {{moodledata_dir}} {{storage_dir_path}}"
   become: yes
 
-- name: "revert permissions of moodledata directory"
+-
+  name: "revert permissions of moodledata directory"
   command: "chmod 770 {{moodledata_dir}}"
   become: yes
 

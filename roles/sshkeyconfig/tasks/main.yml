@@ -1,10 +1,8 @@
 --- 
 - 
-  apt: 
-    name: upgrade
-  become: true
   name: "upgrade"
-  upgrade: true
+  command: "apt-get upgrade"
+  become: true
 - 
   apt: 
     name: sshpass

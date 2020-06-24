@@ -5,13 +5,13 @@
   become: true
 - 
   name: "install sshpass"
-  apt: 
+  apt:
     name: sshpass
     state: latest
   become: true
   
 - 
-  name: “generate sshkey”
+  name: "generate sshkey"
   openssh_keypair:
     path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
     group: "{{ user_name | quote }}"

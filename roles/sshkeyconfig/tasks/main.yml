@@ -1,8 +1,9 @@
 --- 
 - 
-  apt: ~
+  apt: 
+    name: upgrade
   become: true
-  name: upgrade
+  name: "upgrade"
   upgrade: true
 - 
   apt: 

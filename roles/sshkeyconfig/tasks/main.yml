@@ -12,10 +12,9 @@
 - 
   become: true
   group: "{{ user_name | quote }}"
-  name: "“generate sshkey”"
-  openssh_keypair: ~
+  name: "generate sshkey"
   owner: "{{ user_name | quote }}"
-  path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
+  path: /home/{{ user_name | quote }}/.ssh/id_rsa
   size: 4096
 - 
   command: "sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/{{ user_name | quote }}/.ssh/id_rsa.pub -o StrictHostKeyChecking=no {{user_name | quote }}@{{ tar_vm_ip | quote }}"

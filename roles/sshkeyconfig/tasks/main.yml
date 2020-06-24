@@ -1,25 +1,23 @@
----
-  
----
-   - name: "upgrade"
-     apt:
-      upgrade: true
-     become: true
-
-   - name: "install sshpass"
-     apt:
-       name: sshpass
-       state: latest
-     become: yes
-
-   - name: “generate sshkey”
-     openssh_keypair:
-      path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
-      group: "{{ user_name | quote }}"
-      owner: "{{ user_name | quote }}"
-      size: 4096
-     become: yes
-
-
-- name: "copy file to remote host"
+--- 
+- 
+  apt: ~
+  become: true
+  name: upgrade
+  upgrade: true
+- 
+  apt: 
+    name: sshpass
+    state: latest
+  become: true
+  name: "install sshpass"
+- 
+  become: true
+  group: "{{ user_name | quote }}"
+  name: "“generate sshkey”"
+  openssh_keypair: ~
+  owner: "{{ user_name | quote }}"
+  path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
+  size: 4096
+- 
   command: "sshpass -p {{ tar_vm_password | quote }} ssh-copy-id -i /home/{{ user_name | quote }}/.ssh/id_rsa.pub -o StrictHostKeyChecking=no {{user_name | quote }}@{{ tar_vm_ip | quote }}"
+  name: "copy file to remote host"

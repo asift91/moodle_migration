@@ -12,7 +12,7 @@
 - 
   name: “generate sshkey”
   openssh_keypair:
-    path: /home/{{ user_name | quote }}/.ssh/id_rsa
+    path: "/home/{{ user_name | quote }}/.ssh/id_rsa"
     group: "{{ user_name | quote }}"
     owner: "{{ user_name | quote }}"
     size: 4096

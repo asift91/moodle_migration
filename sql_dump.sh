@@ -1,7 +1,7 @@
 #!/bin/bash
 
-target_db_server_name=mysql-u4nerw.mysql.database.azure.com
-target_db_login_name=dbadmin@mysql-u4nerw
+target_db_server_name=mysql-43enuc.mysql.database.azure.com
+target_db_login_name=dbadmin@mysql-43enuc
 target_db_pass=iTalent@27
 target_db_name=${1}
 user_name=azureadmin
@@ -19,3 +19,4 @@ else
   mysql -h $target_db_server_name -u $target_db_login_name -p$target_db_pass -e "CREATE DATABASE $target_db_name CHARACTER SET utf8;"
   mysql -h $target_db_server_name -u $target_db_login_name -p$target_db_pass $target_db_name < /home/$user_name/storage/database.sql
 fi
+43enuc

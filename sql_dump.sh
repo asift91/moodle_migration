@@ -19,4 +19,3 @@ else
   mysql -h $target_db_server_name -u $target_db_login_name -p$target_db_pass -e "CREATE DATABASE $target_db_name CHARACTER SET utf8;"
   mysql -h $target_db_server_name -u $target_db_login_name -p$target_db_pass $target_db_name < /home/$user_name/database.sql
 fi
-43enuc

@@ -1,5 +1,6 @@
 user_name: azureadmin
 default_permission: www-data
+webroot: /var/www/html
  
 # Target details
 target_dns_name: lb-43enuc.eastus.cloudapp.azure.com

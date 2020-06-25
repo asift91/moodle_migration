@@ -9,6 +9,6 @@
 
 - hosts: webservers
   roles:
-    - restore_db_backup
     - restore_site_backup
+    - restore_db_backup
     - replication

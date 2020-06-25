@@ -2,8 +2,8 @@
   connection: local
   roles:
     - sshkeyconfig
-    - create_db_backup
     - copy_moodle_siteNdata
+    - create_db_backup
     - update_config_file
     - createNcopystoragezip
 

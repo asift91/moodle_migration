@@ -9,9 +9,7 @@
 -
   name: "copy storage.zip file to remote host"
   command: scp /home/{{user_name}}/storage.tar {{user_name}}@{{tar_vm_ip}}:/home/{{user_name}}
-  become: yes
 
 -
   name: "copy DB dump file to remote host"
   command: scp /home/{{user_name}}/database.sql {{user_name}}@{{tar_vm_ip}}:/home/{{user_name}}
-  become: yes

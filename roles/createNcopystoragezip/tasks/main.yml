@@ -8,7 +8,7 @@
 
 -
   name: "copy storage.zip file to remote host"
-  command: scp /home/{{user_name}}/storage.zip {{user_name}}@{{tar_vm_ip}}:/home/{{user_name}}
+  command: scp /home/{{user_name}}/storage.tar {{user_name}}@{{tar_vm_ip}}:/home/{{user_name}}
   become: yes
 
 -

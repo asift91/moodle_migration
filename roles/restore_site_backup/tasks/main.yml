@@ -1,7 +1,7 @@
 ---
-- name: Extract storage.zip
+- name: Extract storage.tar
   unarchive:
-    src: "{{db_dir_path}}/storage.zip"
+    src: "{{db_dir_path}}/storage.tar"
     dest: "{{db_dir_path}}"
     owner: "{{default_permission}}"
     group: "{{default_permission}}"

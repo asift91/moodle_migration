@@ -1,7 +1,7 @@
 #!/bin/bash
 
-target_db_server_name=mysql-43enuc.mysql.database.azure.com
-target_db_login_name=dbadmin@mysql-43enuc
+target_db_server_name=mysql-q345z7.mysql.database.azure.com
+target_db_login_name=dbadmin@mysql-q345z7
 target_db_pass=iTalent@27
 target_db_name=${1}
 user_name=azureadmin

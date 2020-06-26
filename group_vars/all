@@ -16,7 +16,7 @@ source_db_server_name: mysql-vc2grz.mysql.database.azure.com
 source_db_login_name: dbadmin@mysql-vc2grz
 source_db_pass: iTalent@27
 source_db_name: moodle
-source_dns_name:  lb-vc2grz.eastus.cloudapp.azure.com
+source_dns_name: lb-vc2grz.eastus.cloudapp.azure.com
 
 # Directory paths
 db_dir_path: /home/azureadmin

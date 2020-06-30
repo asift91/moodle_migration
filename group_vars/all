@@ -1,6 +1,7 @@
 user_name: azureadmin
 default_permission: www-data
 webroot: /var/www/html
+file_format: tar
  
 # Target details
 target_dns_name: lb-q345z7.eastus.cloudapp.azure.com

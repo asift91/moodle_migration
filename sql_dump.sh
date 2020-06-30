@@ -1,10 +1,10 @@
 #!/bin/bash
 
-target_db_server_name=mysql-q345z7.mysql.database.azure.com
-target_db_login_name=dbadmin@mysql-q345z7
-target_db_pass=iTalent@27
-target_db_name=${1}
-user_name=azureadmin
+target_db_server_name=${1}
+target_db_login_name=${2}
+target_db_pass=${3}
+target_db_name=${4}
+user_name=${5}
 
 # Above values should be input to the script but for testing we are passing the variables as hardcoded values
 

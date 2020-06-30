@@ -2,7 +2,7 @@
 - name: Create a zip archive of storage
   archive:
     path: "{{storage_dir_path}}"
-    format: {{file_format}}
+    format: "{{file_format}}"
     dest: /home/{{user_name}}/storage.tar
   become: yes
 

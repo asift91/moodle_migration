@@ -16,5 +16,5 @@
   args: 
     executable: /bin/bash
   name: "Run a sql_dump.sh script with arguments (using 'cmd' parameter)"
-  shell: "/home/{{ user_name | quote }}/{{ sql_dump_script_name | quote }} {{ target_db_name | quote }}"
+  shell: "/home/{{ user_name | quote }}/{{ sql_dump_script_name | quote }} {{ target_db_server_name | quote }} {{ target_db_login_name | quote }} {{ target_db_pass | quote }} {{ target_db_name | quote }} {{ user_name | quote }}"
 
